@@ -29,6 +29,11 @@ class OMDBAPIClient: NSObject {
                     } catch {
                         print("Error: \(error)")
                     }
+                    
+                    
+                    
+                    
+                    
                 }
             })
             // we pressed enter in browser
