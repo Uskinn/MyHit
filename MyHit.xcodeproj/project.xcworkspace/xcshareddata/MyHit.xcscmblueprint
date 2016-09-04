@@ -1,5 +1,4 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A9FD193591ECB41666CFE4B0C2426F625BB8A28A",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
@@ -9,12 +8,12 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2E001601-A462-444A-B017-1B7212B42FAB",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "5A29B29B9B8CFBCA28F072170B70F021754525D7" : "",
-    "A9FD193591ECB41666CFE4B0C2426F625BB8A28A" : "MyHit\/"
+    "5A29B29B9B8CFBCA28F072170B70F021754525D7" : "..",
+    "A9FD193591ECB41666CFE4B0C2426F625BB8A28A" : ""
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "MyHit",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MyHit\/MyHit.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MyHit.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Uskinn\/Uber-SplashScreen-Tutorial.git",

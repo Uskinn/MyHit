@@ -13,6 +13,7 @@
 		8A48B1EE1D7B6785006BD0A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A48B1EC1D7B6785006BD0A7 /* Main.storyboard */; };
 		8A48B1F01D7B6785006BD0A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A48B1EF1D7B6785006BD0A7 /* Assets.xcassets */; };
 		8A48B1F31D7B6785006BD0A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A48B1F11D7B6785006BD0A7 /* LaunchScreen.storyboard */; };
+		8A48B1FE1D7C8D66006BD0A7 /* OMDBAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48B1FD1D7C8D66006BD0A7 /* OMDBAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8A48B1EF1D7B6785006BD0A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A48B1F21D7B6785006BD0A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A48B1F41D7B6785006BD0A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A48B1FD1D7C8D66006BD0A7 /* OMDBAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMDBAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +61,21 @@
 				8A48B1E61D7B6785006BD0A7 /* AppDelegate.swift */,
 				8A48B1E81D7B6785006BD0A7 /* FirstViewController.swift */,
 				8A48B1EA1D7B6785006BD0A7 /* SecondViewController.swift */,
+				8A48B1FA1D7B9CBB006BD0A7 /* Utility */,
 				8A48B1EC1D7B6785006BD0A7 /* Main.storyboard */,
 				8A48B1EF1D7B6785006BD0A7 /* Assets.xcassets */,
 				8A48B1F11D7B6785006BD0A7 /* LaunchScreen.storyboard */,
 				8A48B1F41D7B6785006BD0A7 /* Info.plist */,
 			);
 			path = MyHit;
+			sourceTree = "<group>";
+		};
+		8A48B1FA1D7B9CBB006BD0A7 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8A48B1FD1D7C8D66006BD0A7 /* OMDBAPIClient.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A48B1EB1D7B6785006BD0A7 /* SecondViewController.swift in Sources */,
+				8A48B1FE1D7C8D66006BD0A7 /* OMDBAPIClient.swift in Sources */,
 				8A48B1E71D7B6785006BD0A7 /* AppDelegate.swift in Sources */,
 				8A48B1E91D7B6785006BD0A7 /* FirstViewController.swift in Sources */,
 			);
@@ -291,6 +303,7 @@
 				8A48B1F91D7B6785006BD0A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
