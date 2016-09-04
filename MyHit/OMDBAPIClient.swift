@@ -22,7 +22,10 @@ class OMDBAPIClient: NSObject {
                     do {
                         let responseData = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! NSDictionary
                         
-                        complitionHandler(responseData)
+                        NSOperationQueue.mainQueue().addOperationWithBlock({ 
+                            complitionHandler(responseData)
+                        })
+                        
                     } catch {
                         print("Error: \(error)")
                     }
