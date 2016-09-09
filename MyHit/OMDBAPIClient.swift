@@ -9,28 +9,33 @@
 import UIKit
 
 class OMDBAPIClient: NSObject {
-    
+    //1
     class func getMoviesWithComplition(complitionHandler: (NSDictionary) -> ()) {
-        
+        //2
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-        //typed my url in browser
+        //3
         if let OMDBURL = NSURL(string: "http://www.omdbapi.com/?t=taxi&y=&plot=full&r=json") {
-            
-            // let's get the task going
+            //4
             let OMDBTask = session.dataTaskWithURL(OMDBURL, completionHandler: { (data, response, error) in
+                //5
                 if let data = data {
                     do {
-                        let responseData = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! NSDictionary
-                        
-                        complitionHandler(responseData)
+                        //6
+                        let responseData = try NSJSONSerialization.JSONObjectWithData(data, options: [])
+                            as! NSDictionary
+                        //7
+                        NSOperationQueue.mainQueue().addOperationWithBlock({
+                            complitionHandler(responseData)
+                            print(responseData)
+                        })
+                        //8
                     } catch {
                         print("Error: \(error)")
                     }
                 }
             })
-            // we pressed enter in browser
+            //9
             OMDBTask.resume()
         }
-        
     }
 }

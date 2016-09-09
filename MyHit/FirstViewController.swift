@@ -9,11 +9,16 @@
 import UIKit
 
 class FirstViewController: UIViewController {
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-                
+          OMDBAPIClient.getMoviesWithComplition { (responseData) in
+            let title = responseData["Title"] as? String
+            
+            self.titleLabel.text = title
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
     
