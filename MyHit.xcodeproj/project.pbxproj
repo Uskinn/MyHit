@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A0BF0881D82F324006811EE /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BF0871D82F324006811EE /* Movie.swift */; };
 		8A48B1E71D7B6785006BD0A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48B1E61D7B6785006BD0A7 /* AppDelegate.swift */; };
 		8A48B1E91D7B6785006BD0A7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48B1E81D7B6785006BD0A7 /* FirstViewController.swift */; };
 		8A48B1EB1D7B6785006BD0A7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48B1EA1D7B6785006BD0A7 /* SecondViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A0BF0871D82F324006811EE /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		8A48B1E31D7B6785006BD0A7 /* MyHit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A48B1E61D7B6785006BD0A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A48B1E81D7B6785006BD0A7 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				8A48B1E61D7B6785006BD0A7 /* AppDelegate.swift */,
 				8A48B1E81D7B6785006BD0A7 /* FirstViewController.swift */,
 				8A48B1EA1D7B6785006BD0A7 /* SecondViewController.swift */,
+				8A0BF0871D82F324006811EE /* Movie.swift */,
 				8A48B1FA1D7B9CBB006BD0A7 /* Utility */,
 				8A48B1EC1D7B6785006BD0A7 /* Main.storyboard */,
 				8A48B1EF1D7B6785006BD0A7 /* Assets.xcassets */,
@@ -152,6 +155,7 @@
 			files = (
 				8A48B1EB1D7B6785006BD0A7 /* SecondViewController.swift in Sources */,
 				8A48B1FE1D7C8D66006BD0A7 /* OMDBAPIClient.swift in Sources */,
+				8A0BF0881D82F324006811EE /* Movie.swift in Sources */,
 				8A48B1E71D7B6785006BD0A7 /* AppDelegate.swift in Sources */,
 				8A48B1E91D7B6785006BD0A7 /* FirstViewController.swift in Sources */,
 			);
