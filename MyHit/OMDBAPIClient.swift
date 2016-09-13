@@ -26,7 +26,7 @@ class OMDBAPIClient: NSObject {
                         //7
                         NSOperationQueue.mainQueue().addOperationWithBlock({
                             complitionHandler(responseData)
-                            print(responseData)
+                            //print(responseData)
                         })
                         //8
                     } catch {
