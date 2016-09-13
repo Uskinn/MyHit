@@ -8,21 +8,22 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     @IBOutlet weak var movieCollectionView: UICollectionView!
+    
     let posters = [UIImage(named: "1.JPG"), UIImage(named: "2.JPG"), UIImage(named: "3.JPG")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-//          OMDBAPIClient.getMoviesWithComplition { (responseData) in
-//            let title = responseData["Title"] as? String
-//            
-//            self.titleLabel.text = title
-        //}
-        // Do any additional setup after loading the view, typically from a nib.
+        OMDBAPIClient.getMoviesWithComplition { (responseData) in
+            
+            
+            
+            
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,7 +36,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell
+        let cell: CollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell
         
         cell.movieCollectionImage.image = self.posters[indexPath.row]
         
@@ -51,31 +52,19 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         if segue.identifier == "showMovie" {
             
-            if let indexPaths = self.movieCollectionView.indexPathsForSelectedItems() {
-            let indexPath = indexPaths[0] as NSIndexPath
-            
-            let destinationVC = segue.destinationViewController as! MovieDetailViewController
-            
-            destinationVC.moviePosterImage.image = self.posters[indexPath.row]
+            if let indexPaths = self.movieCollectionView?.indexPathsForSelectedItems() {
+                let indexPath = indexPaths[0] as NSIndexPath
+                
+                let destinationVC = segue.destinationViewController as! MovieDetailViewController
+                
+                // print(self.posters[indexPath.row])
+                
+                // destinationVC.poster = self.posters[indexPath.row]
+                
             } else {
-                print("error")
+                print("error" )
             }
+        }
     }
-}
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
 

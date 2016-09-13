@@ -11,12 +11,15 @@ import UIKit
 class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var moviePosterImage: UIImageView!
-    var poster = UIImage()
+    //var poster: UIImage!
+    var movieModel: Movie?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      self.moviePosterImage.image = self.poster
+        //self.moviePosterImage.image = poster
+        
+
         
     }
 

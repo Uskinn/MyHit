@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Movie {
+struct Movie {
     
     var title: String = ""
     var releaseDate: Int = 0
@@ -19,5 +19,5 @@ class Movie {
     var metaScore: Double = 0.0
     var plot: String = ""
     var poster: String = ""
-    
+
 }
