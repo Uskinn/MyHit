@@ -13,13 +13,16 @@ class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, 
     @IBOutlet weak var movieCollectionView: UICollectionView!
     
     let posters = [UIImage(named: "1.JPG"), UIImage(named: "2.JPG"), UIImage(named: "3.JPG")]
+    var movieModal: Movie?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        OMDBAPIClient.getMoviesWithComplition { (responseData) in
+        OMDBAPIClient.getMoviesWithComplition { (movie) in
             
+           print(movie)
             
+            self.movieModal = movie
             
             
             
@@ -59,7 +62,7 @@ class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, 
                 
                 // print(self.posters[indexPath.row])
                 
-                // destinationVC.poster = self.posters[indexPath.row]
+                 destinationVC.movieModel = self.movieModal
                 
             } else {
                 print("error" )

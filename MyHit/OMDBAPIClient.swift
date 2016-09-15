@@ -10,7 +10,7 @@ import UIKit
 
 class OMDBAPIClient: NSObject {
     //1
-    class func getMoviesWithComplition(complitionHandler: (NSDictionary) -> ()) {
+    class func getMoviesWithComplition(complitionHandler: (Movie) -> ()) {
         //2
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
         //3
@@ -25,8 +25,11 @@ class OMDBAPIClient: NSObject {
                             as! NSDictionary
                         //7
                         NSOperationQueue.mainQueue().addOperationWithBlock({
-                            complitionHandler(responseData)
-                            //print(responseData)
+                            
+                            let movie = Movie.mapFromDictionary(responseData)
+                            
+                            complitionHandler(movie)
+                            print(responseData)
                         })
                         //8
                     } catch {

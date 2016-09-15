@@ -17,10 +17,16 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.moviePosterImage.image = poster
-        
-
-        
+        if let poster = movieModel?.poster {
+            
+            if let url = NSURL(string: poster) {
+                
+                if let data = NSData(contentsOfURL: url) {
+                    
+                    moviePosterImage.image = UIImage(data: data)
+                }
+            }
+        }
     }
-
+    
 }
