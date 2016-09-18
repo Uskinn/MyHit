@@ -9,21 +9,21 @@
 import UIKit
 
 class OMDBAPIClient: NSObject {
-    //1
-    class func getMoviesWithComplition(complitionHandler: (Movie) -> ()) {
-        //2
+    
+    class func getMovieWithComplition(complitionHandler: (Movie) -> ()) {
+        
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-        //3
-        if let OMDBURL = NSURL(string: "http://www.omdbapi.com/?t=taxi&y=&plot=full&r=json") {
-            //4
+        
+        if let OMDBURL = NSURL(string: "http://www.omdbapi.com/?t=taxi&y=&plot=full&r=json" ) {
+            
             let OMDBTask = session.dataTaskWithURL(OMDBURL, completionHandler: { (data, response, error) in
-                //5
+                
                 if let data = data {
                     do {
-                        //6
+                        
                         let responseData = try NSJSONSerialization.JSONObjectWithData(data, options: [])
                             as! NSDictionary
-                        //7
+                        
                         NSOperationQueue.mainQueue().addOperationWithBlock({
                             
                             let movie = Movie.mapFromDictionary(responseData)
@@ -31,14 +31,60 @@ class OMDBAPIClient: NSObject {
                             complitionHandler(movie)
                             print(responseData)
                         })
-                        //8
+                        
                     } catch {
                         print("Error: \(error)")
                     }
                 }
             })
-            //9
+            
             OMDBTask.resume()
         }
     }
+    
+    class func getMovies(completion: ([Movie] -> Void)) {
+        
+        let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        
+        if let  omdbURL = NSURL(string: "http://www.omdbapi.com/?s=love&page=2") {
+            let omdbTask = session.dataTaskWithURL(omdbURL, completionHandler: { (data, response, error ) in
+                if let data = data {
+                    do {
+                        let responseData = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! NSDictionary
+                        
+                        NSOperationQueue.mainQueue().addOperationWithBlock({
+                            
+                            let moviesDictArray = responseData["Search"] as! [NSDictionary]
+                            
+                            var moviesCollection : [Movie] = []
+                            
+                            for movieDict in moviesDictArray {
+                                let movie = Movie.mapFromDictionary(movieDict)
+                                moviesCollection.append(movie)
+                            }
+                            completion(moviesCollection)
+                        })
+                        
+                    }  catch {
+                        print(error)
+                    }
+                }
+            })
+            omdbTask.resume()
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -7,26 +7,35 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var moviePosterImage: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     //var poster: UIImage!
     var movieModel: Movie?
+    var movieTitle: Movie?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let poster = movieModel?.poster {
-            
+        
             if let url = NSURL(string: poster) {
+    
+                moviePosterImage.sd_setImageWithURL(url)
                 
-                if let data = NSData(contentsOfURL: url) {
-                    
-                    moviePosterImage.image = UIImage(data: data)
-                }
             }
         }
+        
+        if let title = movieTitle?.title {
+            titleLabel.text = title
+        }
+
     }
+    
     
 }

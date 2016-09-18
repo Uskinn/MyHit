@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013F0DD11079A49C5631D505 /* Pods_MyHit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E015D8E8AA4136B0A3B12CE7 /* Pods_MyHit.framework */; };
 		8A0BF0881D82F324006811EE /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BF0871D82F324006811EE /* Movie.swift */; };
 		8A2ECEB01D89C41F00267325 /* MyHitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2ECEAF1D89C41F00267325 /* MyHitTests.swift */; };
 		8A2ECEB71D89C59C00267325 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BF0871D82F324006811EE /* Movie.swift */; };
@@ -32,10 +33,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		296B7C2D09DF3A4AB1532BDD /* Pods-MyHit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyHit/Pods-MyHit.debug.xcconfig"; sourceTree = "<group>"; };
 		8A0BF0871D82F324006811EE /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		8A2ECEAD1D89C41F00267325 /* MyHitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyHitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A2ECEAF1D89C41F00267325 /* MyHitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHitTests.swift; sourceTree = "<group>"; };
 		8A2ECEB11D89C41F00267325 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A30818A1D8DE16200449383 /* MyHit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyHit-Bridging-Header.h"; sourceTree = "<group>"; };
 		8A48B1E31D7B6785006BD0A7 /* MyHit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A48B1E61D7B6785006BD0A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A48B1E81D7B6785006BD0A7 /* MovieCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,8 @@
 		8A48B1FD1D7C8D66006BD0A7 /* OMDBAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OMDBAPIClient.swift; sourceTree = "<group>"; };
 		8AA8DD461D84C9A400CF99AF /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		8AA8DD481D84C9EB00CF99AF /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		E015D8E8AA4136B0A3B12CE7 /* Pods_MyHit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyHit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F646AAF5BFD650F0BD98C9F9 /* Pods-MyHit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyHit.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyHit/Pods-MyHit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +66,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				013F0DD11079A49C5631D505 /* Pods_MyHit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		390A83634416FE043180BEAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E015D8E8AA4136B0A3B12CE7 /* Pods_MyHit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8A2ECEAE1D89C41F00267325 /* MyHitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +96,8 @@
 				8A48B1E51D7B6785006BD0A7 /* MyHit */,
 				8A2ECEAE1D89C41F00267325 /* MyHitTests */,
 				8A48B1E41D7B6785006BD0A7 /* Products */,
+				B7A1F64D4230D279395BFB90 /* Pods */,
+				390A83634416FE043180BEAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +124,7 @@
 				8A48B1EF1D7B6785006BD0A7 /* Assets.xcassets */,
 				8A48B1F11D7B6785006BD0A7 /* LaunchScreen.storyboard */,
 				8A48B1F41D7B6785006BD0A7 /* Info.plist */,
+				8A30818A1D8DE16200449383 /* MyHit-Bridging-Header.h */,
 			);
 			path = MyHit;
 			sourceTree = "<group>";
@@ -118,6 +135,15 @@
 				8A48B1FD1D7C8D66006BD0A7 /* OMDBAPIClient.swift */,
 			);
 			name = Utility;
+			sourceTree = "<group>";
+		};
+		B7A1F64D4230D279395BFB90 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				296B7C2D09DF3A4AB1532BDD /* Pods-MyHit.debug.xcconfig */,
+				F646AAF5BFD650F0BD98C9F9 /* Pods-MyHit.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A48B1F71D7B6785006BD0A7 /* Build configuration list for PBXNativeTarget "MyHit" */;
 			buildPhases = (
+				72786352DEEF061BCFC3D604 /* [CP] Check Pods Manifest.lock */,
 				8A48B1DF1D7B6785006BD0A7 /* Sources */,
 				8A48B1E01D7B6785006BD0A7 /* Frameworks */,
 				8A48B1E11D7B6785006BD0A7 /* Resources */,
+				421FAAC554BECD39C91D5209 /* [CP] Embed Pods Frameworks */,
+				2351991A8FD389BD0771C964 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,6 +246,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2351991A8FD389BD0771C964 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyHit/Pods-MyHit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		421FAAC554BECD39C91D5209 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyHit/Pods-MyHit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72786352DEEF061BCFC3D604 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8A2ECEA91D89C41F00267325 /* Sources */ = {
@@ -381,23 +458,30 @@
 		};
 		8A48B1F81D7B6785006BD0A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 296B7C2D09DF3A4AB1532BDD /* Pods-MyHit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MyHit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SN.MyHit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyHit/MyHit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		8A48B1F91D7B6785006BD0A7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F646AAF5BFD650F0BD98C9F9 /* Pods-MyHit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MyHit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SN.MyHit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyHit/MyHit-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -411,6 +495,7 @@
 				8A2ECEB51D89C41F00267325 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A48B1DE1D7B6785006BD0A7 /* Build configuration list for PBXProject "MyHit" */ = {
 			isa = XCConfigurationList;

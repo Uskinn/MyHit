@@ -22,7 +22,7 @@ class MyHitTests: XCTestCase {
     
     func testMovieMapping() {
         
-        let movieDictionary = ["Title": "Taxi", "Poster": "http://test.com"] as! NSDictionary
+        let movieDictionary = ["Title": "Taxi", "Poster": "http://test.com"] as NSDictionary
     
         let movie = Movie.mapFromDictionary(movieDictionary)
         
