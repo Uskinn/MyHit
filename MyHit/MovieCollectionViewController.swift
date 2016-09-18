@@ -12,20 +12,16 @@ class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, 
     
     @IBOutlet weak var movieCollectionView: UICollectionView!
     
-    let posters = [UIImage(named: "1.JPG"), UIImage(named: "2.JPG"), UIImage(named: "3.JPG")]
+    var movies = [Movie]()
     var movieModal: Movie?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        OMDBAPIClient.getMoviesWithComplition { (movie) in
-            
-           print(movie)
-            
-            self.movieModal = movie
-            
-            
-            
+        OMDBAPIClient.getMovies { (movies) in
+            print(movies)
+            self.movies = movies
+            self.movieCollectionView.reloadData()
         }
     }
     
@@ -35,13 +31,18 @@ class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.posters.count
+        return self.movies.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: CollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell
         
-        cell.movieCollectionImage.image = self.posters[indexPath.row]
+        let movie = movies[indexPath.row]
+        if let poster = NSURL(string: movie.poster) {
+            cell.movieCollectionImage.sd_setImageWithURL(poster)
+        }
+        
+        
         
         return cell
     }
@@ -60,9 +61,9 @@ class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, 
                 
                 let destinationVC = segue.destinationViewController as! MovieDetailViewController
                 
-                // print(self.posters[indexPath.row])
+                destinationVC.movieModel = self.movieModal
+                destinationVC.movieTitle = self.movieModal
                 
-                 destinationVC.movieModel = self.movieModal
                 
             } else {
                 print("error" )

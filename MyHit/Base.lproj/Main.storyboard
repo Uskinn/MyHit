@@ -89,20 +89,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xx8-Zz-dXb">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="312"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xx8-Zz-dXb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSi-Xu-O6j">
+                                <rect key="frame" x="225" y="338" width="151" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="89Q-2W-FV6"/>
+                                    <constraint firstAttribute="height" constant="50" id="lEN-W5-LOr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cSi-Xu-O6j" firstAttribute="centerX" secondItem="HWj-cH-rDV" secondAttribute="centerX" id="1GU-g8-ZLO"/>
                             <constraint firstAttribute="trailing" secondItem="xx8-Zz-dXb" secondAttribute="trailing" id="AZm-XW-dy0"/>
+                            <constraint firstItem="cSi-Xu-O6j" firstAttribute="top" secondItem="xx8-Zz-dXb" secondAttribute="bottom" constant="88" id="W5u-Ic-zhK"/>
                             <constraint firstItem="xx8-Zz-dXb" firstAttribute="leading" secondItem="HWj-cH-rDV" secondAttribute="leading" id="aZI-g0-fyk"/>
-                            <constraint firstItem="Re6-Si-PBo" firstAttribute="top" secondItem="xx8-Zz-dXb" secondAttribute="bottom" constant="288" id="o6U-OT-dXw"/>
+                            <constraint firstItem="Re6-Si-PBo" firstAttribute="top" secondItem="xx8-Zz-dXb" secondAttribute="bottom" constant="350" id="o6U-OT-dXw"/>
                             <constraint firstItem="xx8-Zz-dXb" firstAttribute="top" secondItem="HWj-cH-rDV" secondAttribute="top" id="q1P-Jq-I4h"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="moviePosterImage" destination="xx8-Zz-dXb" id="5Y7-Gh-2qb"/>
+                        <outlet property="titleLabel" destination="cSi-Xu-O6j" id="lAd-up-9He"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c71-lx-Kbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
