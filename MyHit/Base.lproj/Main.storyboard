@@ -103,14 +103,26 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKY-qE-7wo">
+                                <rect key="frame" x="14" y="399" width="150" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="dAk-GN-gFk"/>
+                                    <constraint firstAttribute="height" constant="38" id="kfv-Nb-5TO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cSi-Xu-O6j" firstAttribute="centerX" secondItem="HWj-cH-rDV" secondAttribute="centerX" constant="-107" id="1GU-g8-ZLO"/>
                             <constraint firstAttribute="trailing" secondItem="xx8-Zz-dXb" secondAttribute="trailing" id="AZm-XW-dy0"/>
+                            <constraint firstItem="nKY-qE-7wo" firstAttribute="leading" secondItem="HWj-cH-rDV" secondAttribute="leadingMargin" constant="-6" id="KMr-4P-MEa"/>
                             <constraint firstItem="cSi-Xu-O6j" firstAttribute="top" secondItem="xx8-Zz-dXb" secondAttribute="bottom" constant="13" id="W5u-Ic-zhK"/>
                             <constraint firstItem="xx8-Zz-dXb" firstAttribute="leading" secondItem="HWj-cH-rDV" secondAttribute="leading" id="aZI-g0-fyk"/>
                             <constraint firstItem="cSi-Xu-O6j" firstAttribute="leading" secondItem="HWj-cH-rDV" secondAttribute="leadingMargin" id="fwl-DB-HiM"/>
+                            <constraint firstItem="nKY-qE-7wo" firstAttribute="top" secondItem="cSi-Xu-O6j" secondAttribute="bottom" constant="16" id="lnO-pT-teq"/>
                             <constraint firstItem="Re6-Si-PBo" firstAttribute="top" secondItem="xx8-Zz-dXb" secondAttribute="bottom" constant="280" id="o6U-OT-dXw"/>
                             <constraint firstItem="xx8-Zz-dXb" firstAttribute="top" secondItem="HWj-cH-rDV" secondAttribute="top" constant="40" id="q1P-Jq-I4h"/>
                         </constraints>
@@ -118,6 +130,7 @@
                     <connections>
                         <outlet property="moviePosterImage" destination="xx8-Zz-dXb" id="5Y7-Gh-2qb"/>
                         <outlet property="titleLabel" destination="cSi-Xu-O6j" id="lAd-up-9He"/>
+                        <outlet property="yearLabel" destination="nKY-qE-7wo" id="7Pp-YC-1Kz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c71-lx-Kbw" userLabel="First Responder" sceneMemberID="firstResponder"/>

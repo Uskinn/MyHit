@@ -38,7 +38,7 @@ class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, 
         let cell: CollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell
         
         let movie = moviesArray[indexPath.row]
-        if let poster = NSURL(string: movie.poster) {
+        if let poster = NSURL(string: movie.poster!) {
             cell.movieCollectionImage.sd_setImageWithURL(poster)
         }
         return cell
