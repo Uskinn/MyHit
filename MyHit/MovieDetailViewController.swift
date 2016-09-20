@@ -14,28 +14,21 @@ class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var moviePosterImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    //var poster: UIImage!
-    var movieModel: Movie?
-    var movieTitle: Movie?
+    @IBOutlet weak var yearLabel: UILabel!
     
+    var movieModel: Movie?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let poster = movieModel?.poster {
-        
             if let url = NSURL(string: poster) {
-    
                 moviePosterImage.sd_setImageWithURL(url)
-                
             }
         }
-        
-        if let title = movieTitle?.title {
+        if let title = movieModel?.title {
             titleLabel.text = title
+          
         }
-
     }
-    
-    
 }
