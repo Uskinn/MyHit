@@ -16,8 +16,6 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     //var poster: UIImage!
     var movieModel: Movie?
-    var movieTitle: Movie?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +29,7 @@ class MovieDetailViewController: UIViewController {
             }
         }
         
-        if let title = movieTitle?.title {
+        if let title = movieModel?.title {
             titleLabel.text = title
         }
 

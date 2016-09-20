@@ -12,15 +12,15 @@ class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, 
     
     @IBOutlet weak var movieCollectionView: UICollectionView!
     
-    var movies = [Movie]()
-    var movieModal: Movie?
+    var moviesArray = [Movie]()
+    var movieModalCollectionView: Movie?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         OMDBAPIClient.getMovies { (movies) in
             print(movies)
-            self.movies = movies
+            self.moviesArray = movies
             self.movieCollectionView.reloadData()
         }
     }
@@ -31,19 +31,16 @@ class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.movies.count
+        return self.moviesArray.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: CollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell
         
-        let movie = movies[indexPath.row]
+        let movie = moviesArray[indexPath.row]
         if let poster = NSURL(string: movie.poster) {
             cell.movieCollectionImage.sd_setImageWithURL(poster)
         }
-        
-        
-        
         return cell
     }
     
@@ -57,13 +54,11 @@ class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, 
         if segue.identifier == "showMovie" {
             
             if let indexPaths = self.movieCollectionView?.indexPathsForSelectedItems() {
-                let indexPath = indexPaths[0] as NSIndexPath
+               let indexPath = indexPaths[0] as NSIndexPath
                 
                 let destinationVC = segue.destinationViewController as! MovieDetailViewController
                 
-                destinationVC.movieModel = self.movieModal
-                destinationVC.movieTitle = self.movieModal
-                
+                destinationVC.movieModel = self.moviesArray[indexPath.row]
                 
             } else {
                 print("error" )

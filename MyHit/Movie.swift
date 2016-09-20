@@ -27,6 +27,7 @@ struct Movie {
             
             movie.title = dictionary["Title"] as! String
             movie.poster = dictionary["Poster"] as! String
+        
            
         
         }
