@@ -13,7 +13,6 @@ struct Movie {
     var title: String = ""
     var releaseDate: Int = 0
     var director: String = ""
-    var writer: String = ""
     var stars: [String] = []
     var imdbScore: Double = 0.0
     var metaScore: Double = 0.0
@@ -28,6 +27,7 @@ struct Movie {
             
             movie.title = dictionary["Title"] as! String
             movie.poster = dictionary["Poster"] as! String
+           
         
         }
         return movie
