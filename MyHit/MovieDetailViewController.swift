@@ -21,6 +21,8 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(movieModel?.title)
+        
         if let poster = movieModel?.poster {
             if let url = NSURL(string: poster) {
                 moviePosterImage.sd_setImageWithURL(url)

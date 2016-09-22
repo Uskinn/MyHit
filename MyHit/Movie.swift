@@ -20,6 +20,7 @@ struct Movie {
     var poster: String?
     var writer: String?
     var genre: String?
+    var imdbID: String?
     
     static func mapFromDictionary(movieDictionary: NSDictionary) -> Movie {
         
@@ -37,6 +38,7 @@ struct Movie {
             movie.metaScore = dictionary["Metascore"] as? String
             movie.writer = dictionary["Writer"] as? String
             movie.genre = dictionary["Genre"] as? String
+            movie.imdbID = dictionary["imdbID"] as? String
         }
         return movie
     }

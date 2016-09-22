@@ -42,11 +42,11 @@ class OMDBAPIClient: NSObject {
         }
     }
     
-    class func getMovieWithComplition(complition: (Movie) -> Void) {
+    class func getMovieWithComplition(movieID: Movie, completion: (Movie) -> Void) {
         
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
         
-        if let OMDBURL = NSURL(string: "http://www.omdbapi.com/?t=taxi&y=&plot=full&r=json") {
+        if let OMDBURL = NSURL(string: "http://www.omdbapi.com/?i=tt0152930&plot=short&r=json") {
             
             let OMDBTask = session.dataTaskWithURL(OMDBURL, completionHandler: { (data, response, error) in
                 
@@ -58,9 +58,12 @@ class OMDBAPIClient: NSObject {
                         
                         NSOperationQueue.mainQueue().addOperationWithBlock({
                             
-                            let movie = Movie.mapFromDictionary(responseData)
+                            let title = responseData["Title"] as! NSDictionary
                             
-                            complition(movie)
+                            let movie = Movie.mapFromDictionary(title)
+                        
+                            
+                            completion(movie)
                             print(responseData)
                         })
                         
