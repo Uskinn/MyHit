@@ -14,24 +14,24 @@ class OMDBAPIClient: NSObject {
         
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
         
-        if let  omdbURL = NSURL(string: "http://www.omdbapi.com/?s=taxi&y=&plot=short&r=json") {
+        if let  omdbURL = NSURL(string: "http://www.omdbapi.com/?s=matrix&y=&plot=short&r=json") {
             let omdbTask = session.dataTaskWithURL(omdbURL, completionHandler: { (data, response, error ) in
                 if let data = data {
                     do {
                         let responseData = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! NSDictionary
                         
-                        NSOperationQueue.mainQueue().addOperationWithBlock({
-                            
-                            let moviesDictArray = responseData["Search"] as! [NSDictionary]
-                            
-                            var moviesCollection : [Movie] = []
-                            
-                            for movieDict in moviesDictArray {
-                                let movie = Movie.mapFromDictionary(movieDict)
-                                moviesCollection.append(movie)
-                            }
-                            completion(moviesCollection)
-                        })
+                        // NSOperationQueue.mainQueue().addOperationWithBlock({
+                        
+                        let moviesDictArray = responseData["Search"] as! [NSDictionary]
+                        
+                        var moviesCollection : [Movie] = []
+                        
+                        for movieDict in moviesDictArray {
+                            let movie = Movie.mapFromDictionary(movieDict)
+                            moviesCollection.append(movie)
+                        }
+                        completion(moviesCollection)
+                        //})
                         
                     }  catch {
                         print(error)
@@ -42,13 +42,13 @@ class OMDBAPIClient: NSObject {
         }
     }
     
-    class func getMovieWithComplition(complition: (Movie) -> Void) {
+    class func getMovieWithCompletion(imdbID: String, completion: (Movie?) -> Void) {
         
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
         
-        if let OMDBURL = NSURL(string: "http://www.omdbapi.com/?t=taxi&y=&plot=full&r=json") {
+        if let omdbUrl = NSURL(string: "http://www.omdbapi.com/?i=\(imdbID)&plot=short&r=json") {
             
-            let OMDBTask = session.dataTaskWithURL(OMDBURL, completionHandler: { (data, response, error) in
+            let omdbTask = session.dataTaskWithURL(omdbUrl, completionHandler: { (data, response, error) in
                 
                 if let data = data {
                     do {
@@ -56,13 +56,9 @@ class OMDBAPIClient: NSObject {
                         let responseData = try NSJSONSerialization.JSONObjectWithData(data, options: [])
                             as! NSDictionary
                         
-                        NSOperationQueue.mainQueue().addOperationWithBlock({
-                            
-                            let movie = Movie.mapFromDictionary(responseData)
-                            
-                            complition(movie)
-                            print(responseData)
-                        })
+                        let movie = Movie.mapFromDictionary(responseData)
+                        
+                        completion(movie)
                         
                     } catch {
                         print("Error: \(error)")
@@ -70,7 +66,7 @@ class OMDBAPIClient: NSObject {
                 }
             })
             
-            OMDBTask.resume()
+            omdbTask.resume()
         }
     }
 }
