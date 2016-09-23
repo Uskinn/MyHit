@@ -36,8 +36,6 @@ class MovieDetailViewController: UIViewController {
                         self.moviePosterImage.sd_setImageWithURL(url)
                     }
                 }
-                
-        
             })
         }
     }

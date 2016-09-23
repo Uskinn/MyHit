@@ -14,7 +14,7 @@ class OMDBAPIClient: NSObject {
         
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
         
-        if let  omdbURL = NSURL(string: "http://www.omdbapi.com/?s=matrix&y=&plot=short&r=json") {
+        if let  omdbURL = NSURL(string: "http://www.omdbapi.com/?s=love&y=&plot=short&r=json") {
             let omdbTask = session.dataTaskWithURL(omdbURL, completionHandler: { (data, response, error ) in
                 if let data = data {
                     do {
