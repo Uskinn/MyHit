@@ -39,9 +39,4 @@ class MovieDetailViewController: UIViewController {
             })
         }
     }
-    
-    // TO DO: delete dummy function
-    func mergeExample() {
-        
-    }
 }
