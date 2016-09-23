@@ -86,7 +86,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Re6-Si-PBo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HWj-cH-rDV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xx8-Zz-dXb">
@@ -104,18 +104,26 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDx-KU-ZHq">
+                                <rect key="frame" x="14" y="445" width="352" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="moviePosterImage" destination="xx8-Zz-dXb" id="5Y7-Gh-2qb"/>
+                        <outlet property="plotLabel" destination="BDx-KU-ZHq" id="zLx-0f-UQc"/>
                         <outlet property="titleLabel" destination="cSi-Xu-O6j" id="lAd-up-9He"/>
                         <outlet property="yearLabel" destination="nKY-qE-7wo" id="7Pp-YC-1Kz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c71-lx-Kbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2315" y="-364"/>
+            <point key="canvasLocation" x="2314.5" y="-364.5"/>
         </scene>
         <!--First-->
         <scene sceneID="dy4-HT-xDQ">

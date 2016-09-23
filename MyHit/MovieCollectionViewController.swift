@@ -18,16 +18,20 @@ class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         OMDBAPIClient.getMovies { (movies) in
-            print(movies)
+            //print(movies)
             self.moviesArray = movies
-            self.movieCollectionView.reloadData()
+            
+            NSOperationQueue.mainQueue().addOperationWithBlock({ 
+                self.movieCollectionView.reloadData()
+            })
+            
         }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
