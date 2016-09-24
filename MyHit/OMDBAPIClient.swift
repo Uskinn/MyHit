@@ -7,38 +7,44 @@
 //
 
 import UIKit
+import CoreData
 
 class OMDBAPIClient: NSObject {
     
     class func getMovies(completion: ([Movie] -> Void)) {
         
-        let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-        
-        if let  omdbURL = NSURL(string: "http://www.omdbapi.com/?s=love&y=&plot=short&r=json") {
-            let omdbTask = session.dataTaskWithURL(omdbURL, completionHandler: { (data, response, error ) in
-                if let data = data {
-                    do {
-                        let responseData = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! NSDictionary
-                        
-                        // NSOperationQueue.mainQueue().addOperationWithBlock({
-                        
-                        let moviesDictArray = responseData["Search"] as! [NSDictionary]
-                        
-                        var moviesCollection : [Movie] = []
-                        
-                        for movieDict in moviesDictArray {
-                            let movie = Movie.mapFromDictionary(movieDict)
-                            moviesCollection.append(movie)
-                        }
-                        completion(moviesCollection)
-                        //})
-                        
-                    }  catch {
-                        print(error)
-                    }
+        loadAndSaveMovies {
+            
+            let moc = DataStore.sharedDataStore.managedObjectContext
+            
+            let movieFetch = NSFetchRequest(entityName: String(ManagedMovie))
+            
+            do {
+                let fetchMovies = try moc.executeFetchRequest(movieFetch) as! [ManagedMovie]
+                
+                let movies = fetchMovies.map {(managedMovie: ManagedMovie) -> Movie in
+                    var movie = Movie()
+                    
+                    movie.title = managedMovie.title
+                    movie.poster = managedMovie.poster
+                    movie.year = managedMovie.year
+                    movie.actors = managedMovie.actors
+                    movie.director = managedMovie.director
+                    movie.plot = managedMovie.plot
+                    movie.imdbRating = managedMovie.imdbRating
+                    movie.metaScore = managedMovie.metaScore
+                    movie.writer = managedMovie.writer
+                    movie.genre = managedMovie.genre
+                    movie.imdbID = managedMovie.imdbID
+                    
+                    return movie
                 }
-            })
-            omdbTask.resume()
+                
+                completion(movies)
+                
+            } catch {
+                print(error)
+            }
         }
     }
     
@@ -66,6 +72,63 @@ class OMDBAPIClient: NSObject {
                 }
             })
             
+            omdbTask.resume()
+        }
+    }
+    
+    class func saveManagedMovie(movie: NSDictionary) {
+        
+        let managedObjectContext = DataStore.sharedDataStore.managedObjectContext
+        
+        let managedMovie = NSEntityDescription.insertNewObjectForEntityForName(
+            String(ManagedMovie), inManagedObjectContext: managedObjectContext) as! ManagedMovie
+        
+        if let dictionary = movie as? [String: AnyObject] {
+            
+            managedMovie.title = dictionary["Title"] as? String
+            managedMovie.poster = dictionary["Poster"] as? String
+            managedMovie.year = dictionary["Year"] as? String
+            managedMovie.actors = dictionary["Actors"] as? String
+            managedMovie.director = dictionary["Director"] as? String
+            managedMovie.plot = dictionary["Plot"] as? String
+            managedMovie.imdbRating = dictionary["imdbRating"] as? String
+            managedMovie.metaScore = dictionary["Metascore"] as? String
+            managedMovie.writer = dictionary["Writer"] as? String
+            managedMovie.genre = dictionary["Genre"] as? String
+            managedMovie.imdbID = dictionary["imdbID"] as? String
+        }
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print("Error occured\(error)")
+        }
+    }
+    
+    class func loadAndSaveMovies(completion: () -> Void) {
+        
+        let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        
+        if let  omdbURL = NSURL(string: "http://www.omdbapi.com/?s=love&y=&plot=short&r=json") {
+            let omdbTask = session.dataTaskWithURL(omdbURL, completionHandler: { (data, response, error ) in
+                if let data = data {
+                    do {
+                        let responseData = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! NSDictionary
+                        
+                        let moviesDictArray = responseData["Search"] as! [NSDictionary]
+                        
+                        
+                        for movieDict in moviesDictArray {
+                            
+                            self.saveManagedMovie(movieDict)
+                        }
+                        completion()
+                        
+                        
+                    }  catch {
+                        print(error)
+                    }
+                }
+            })
             omdbTask.resume()
         }
     }
