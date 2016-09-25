@@ -10,21 +10,14 @@ import UIKit
 import CoreData
 
 class OMDBAPIClient: NSObject {
-    
     class func getMovies(completion: ([Movie] -> Void)) {
-        
         loadAndSaveMovies {
-            
             let moc = DataStore.sharedDataStore.managedObjectContext
-            
             let movieFetch = NSFetchRequest(entityName: String(ManagedMovie))
-            
             do {
                 let fetchMovies = try moc.executeFetchRequest(movieFetch) as! [ManagedMovie]
-                
                 let movies = fetchMovies.map {(managedMovie: ManagedMovie) -> Movie in
                     var movie = Movie()
-                    
                     movie.title = managedMovie.title
                     movie.poster = managedMovie.poster
                     movie.year = managedMovie.year
@@ -36,12 +29,9 @@ class OMDBAPIClient: NSObject {
                     movie.writer = managedMovie.writer
                     movie.genre = managedMovie.genre
                     movie.imdbID = managedMovie.imdbID
-                    
                     return movie
                 }
-                
                 completion(movies)
-                
             } catch {
                 print(error)
             }
@@ -49,23 +39,15 @@ class OMDBAPIClient: NSObject {
     }
     
     class func getMovieWithCompletion(imdbID: String, completion: (Movie?) -> Void) {
-        
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-        
         if let omdbUrl = NSURL(string: "http://www.omdbapi.com/?i=\(imdbID)&plot=short&r=json") {
-            
             let omdbTask = session.dataTaskWithURL(omdbUrl, completionHandler: { (data, response, error) in
-                
                 if let data = data {
                     do {
-                        
                         let responseData = try NSJSONSerialization.JSONObjectWithData(data, options: [])
                             as! NSDictionary
-                        
                         let movie = Movie.mapFromDictionary(responseData)
-                        
                         completion(movie)
-                        
                     } catch {
                         print("Error: \(error)")
                     }
@@ -77,14 +59,10 @@ class OMDBAPIClient: NSObject {
     }
     
     class func saveManagedMovie(movie: NSDictionary) {
-        
         let managedObjectContext = DataStore.sharedDataStore.managedObjectContext
-        
         let managedMovie = NSEntityDescription.insertNewObjectForEntityForName(
             String(ManagedMovie), inManagedObjectContext: managedObjectContext) as! ManagedMovie
-        
         if let dictionary = movie as? [String: AnyObject] {
-            
             managedMovie.title = dictionary["Title"] as? String
             managedMovie.poster = dictionary["Poster"] as? String
             managedMovie.year = dictionary["Year"] as? String
@@ -105,9 +83,7 @@ class OMDBAPIClient: NSObject {
     }
     
     class func loadAndSaveMovies(completion: () -> Void) {
-        
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-        
         if let  omdbURL = NSURL(string: "http://www.omdbapi.com/?s=love&y=&plot=short&r=json") {
             let omdbTask = session.dataTaskWithURL(omdbURL, completionHandler: { (data, response, error ) in
                 if let data = data {
@@ -116,14 +92,11 @@ class OMDBAPIClient: NSObject {
                         
                         let moviesDictArray = responseData["Search"] as! [NSDictionary]
                         
-                        
                         for movieDict in moviesDictArray {
                             
                             self.saveManagedMovie(movieDict)
                         }
                         completion()
-                        
-                        
                     }  catch {
                         print(error)
                     }
