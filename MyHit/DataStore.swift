@@ -14,7 +14,6 @@ class DataStore {
     
     static let sharedDataStore = DataStore()
     
-    var movie = [Movie]()
     
     // MARK: - Core Data Saving support
     
@@ -32,19 +31,6 @@ class DataStore {
         }
     }
     
-    func fetchData () {
-       // let messageFetch = NSFetchRequest(entityName: movie.entityName)
-        let createdAtSort = NSSortDescriptor(key: "createdAt", ascending: true)
-        
-      //  messageFetch.sortDescriptors = [createdAtSort]
-        
-        do {
-        //    self.messages = try self.managedObjectContext.executeFetchRequest(messageFetch) as! [Message]
-            
-        } catch let error as NSError {
-            print("Error: \(error)")
-        }
-    }
     
     // MARK: - Core Data stack
     // Managed Object Context property getter. This is where we've dropped our "boilerplate" code.
@@ -78,7 +64,7 @@ class DataStore {
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
             
-            dict[NSUnderlyingErrorKey] = error as? NSError
+            dict[NSUnderlyingErrorKey] = error as! NSError
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
             // Replace this with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
