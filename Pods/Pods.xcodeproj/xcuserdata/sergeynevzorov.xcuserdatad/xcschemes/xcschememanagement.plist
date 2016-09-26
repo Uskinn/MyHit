@@ -4,29 +4,45 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FontAwesome.swift-FontAwesome.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FontAwesome.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MyHit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5F3A69B9D95670509F5B8C0C5511437D</key>
+		<key>1AA4C60F78CF7A030EC4AE85D9FC5CE8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D60DB16612EF8CFCB4D28062B5348130</key>
+		<key>1FE2578FF0805299395CF2A0206BB671</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E1C1214FC6774030F499ACB5AA877EE6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF4F067C2D0E135B80299B089E168BDA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

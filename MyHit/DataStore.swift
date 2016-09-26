@@ -14,7 +14,6 @@ class DataStore {
     
     static let sharedDataStore = DataStore()
     
-    var movie = [Movie]()
     
     // MARK: - Core Data Saving support
     
@@ -32,19 +31,6 @@ class DataStore {
         }
     }
     
-//    func fetchData () {
-//       // let messageFetch = NSFetchRequest(entityName: movie.entityName)
-//       // let createdAtSort = NSSortDescriptor(key: "createdAt", ascending: true)
-//        
-//      //  messageFetch.sortDescriptors = [createdAtSort]
-//        
-//        do {
-//        //    self.messages = try self.managedObjectContext.executeFetchRequest(messageFetch) as! [Message]
-//            
-//        } catch let error as NSError {
-//            print("Error: \(error)")
-//        }
-//    }
     
     // MARK: - Core Data stack
     // Managed Object Context property getter. This is where we've dropped our "boilerplate" code.

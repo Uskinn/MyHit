@@ -7,4 +7,5 @@ target 'MyHit' do
 
   # Pods for MyHit
     pod ’SDWebImage', '~>3.8'
+    pod ’FontAwesome.swift'
 end
