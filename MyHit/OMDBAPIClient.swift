@@ -10,12 +10,14 @@ import UIKit
 import CoreData
 
 class OMDBAPIClient: NSObject {
+    
     class func getMovies(completion: ([Movie] -> Void)) {
         loadAndSaveMovies {
             let moc = DataStore.sharedDataStore.managedObjectContext
             let movieFetch = NSFetchRequest(entityName: String(ManagedMovie))
             do {
                 let fetchMovies = try moc.executeFetchRequest(movieFetch) as! [ManagedMovie]
+                print("fetchMovies: \(fetchMovies)\ncount: \(fetchMovies.count)")
                 let movies = fetchMovies.map {(managedMovie: ManagedMovie) -> Movie in
                     var movie = Movie()
                     movie.title = managedMovie.title
@@ -75,6 +77,8 @@ class OMDBAPIClient: NSObject {
             managedMovie.genre = dictionary["Genre"] as? String
             managedMovie.imdbID = dictionary["imdbID"] as? String
         }
+//        let store = DataStore.sharedDataStore
+//        store.saveContext()
         do {
             try managedObjectContext.save()
         } catch {
