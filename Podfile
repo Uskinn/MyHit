@@ -6,5 +6,5 @@ target 'MyHit' do
   use_frameworks!
 
   # Pods for MyHit
-
+    pod ’SDWebImage', '~>3.8'
 end

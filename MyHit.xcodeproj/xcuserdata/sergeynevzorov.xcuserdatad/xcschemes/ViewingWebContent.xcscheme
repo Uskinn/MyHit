@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8A48B1E21D7B6785006BD0A7"
-               BuildableName = "MyHit.app"
-               BlueprintName = "MyHit"
+               BlueprintIdentifier = "8A0C3DE61D949354000AA196"
+               BuildableName = "ViewingWebContent.app"
+               BlueprintName = "ViewingWebContent"
                ReferencedContainer = "container:MyHit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,23 +28,13 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8A2ECEAC1D89C41F00267325"
-               BuildableName = "MyHitTests.xctest"
-               BlueprintName = "MyHitTests"
-               ReferencedContainer = "container:MyHit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8A48B1E21D7B6785006BD0A7"
-            BuildableName = "MyHit.app"
-            BlueprintName = "MyHit"
+            BlueprintIdentifier = "8A0C3DE61D949354000AA196"
+            BuildableName = "ViewingWebContent.app"
+            BlueprintName = "ViewingWebContent"
             ReferencedContainer = "container:MyHit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8A48B1E21D7B6785006BD0A7"
-            BuildableName = "MyHit.app"
-            BlueprintName = "MyHit"
+            BlueprintIdentifier = "8A0C3DE61D949354000AA196"
+            BuildableName = "ViewingWebContent.app"
+            BlueprintName = "ViewingWebContent"
             ReferencedContainer = "container:MyHit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -84,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8A48B1E21D7B6785006BD0A7"
-            BuildableName = "MyHit.app"
-            BlueprintName = "MyHit"
+            BlueprintIdentifier = "8A0C3DE61D949354000AA196"
+            BuildableName = "ViewingWebContent.app"
+            BlueprintName = "ViewingWebContent"
             ReferencedContainer = "container:MyHit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

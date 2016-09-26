@@ -4,33 +4,29 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MyHit.xcscheme</key>
+		<key>Pods-MyHit.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
-		<key>ViewingWebContent.xcscheme</key>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-<<<<<<< HEAD
-=======
-		<key>8A0C3DE61D949354000AA196</key>
+		<key>5F3A69B9D95670509F5B8C0C5511437D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
->>>>>>> 622d03cf030223258ecfe1ab7e8060b5fc039f9a
-		<key>8A2ECEAC1D89C41F00267325</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8A48B1E21D7B6785006BD0A7</key>
+		<key>D60DB16612EF8CFCB4D28062B5348130</key>
 		<dict>
 			<key>primary</key>
 			<true/>
