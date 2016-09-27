@@ -20,7 +20,9 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var plotLabel: UILabel!
     @IBOutlet weak var starButtonOutlet: UIBarButtonItem!
     
+    
     var movieModel: Movie?
+    let store = DataStore.sharedDataStore
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +54,15 @@ class MovieDetailViewController: UIViewController {
         }
     }
     @IBAction func starButtonTapped(sender: AnyObject) {
+        
+        let movie = NSEntityDescription.insertNewObjectForEntityForName(String(ManagedMovie), inManagedObjectContext: DataStore.sharedDataStore.managedObjectContext) as! ManagedMovie
+        
+        movie.isFavorite = true
+        movie.year = self.yearLabel.text
+        
+        self.store.saveContext()
+        
+        print(movie)
         
                 
         if self.navigationItem.rightBarButtonItem!.tintColor == UIColor.blueColor() {

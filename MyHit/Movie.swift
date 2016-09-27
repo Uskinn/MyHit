@@ -21,6 +21,7 @@ struct Movie {
     var writer: String?
     var genre: String?
     var imdbID: String?
+    var isFavorite: Bool?
     
     static func mapFromDictionary(movieDictionary: NSDictionary) -> Movie {
         
