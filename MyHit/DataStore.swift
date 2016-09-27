@@ -64,7 +64,11 @@ class DataStore {
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
             
+<<<<<<< HEAD
           // dict[NSUnderlyingErrorKey] = error as! NSError
+=======
+            dict[NSUnderlyingErrorKey] = error as! NSError
+>>>>>>> bbefb5a8b1e9299355b5f104c3b456a72684b5c7
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
             // Replace this with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.

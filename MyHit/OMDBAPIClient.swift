@@ -10,14 +10,16 @@ import UIKit
 import CoreData
 
 class OMDBAPIClient: NSObject {
-    
     class func getMovies(completion: ([Movie] -> Void)) {
         loadAndSaveMovies {
             let moc = DataStore.sharedDataStore.managedObjectContext
             let movieFetch = NSFetchRequest(entityName: String(ManagedMovie))
             do {
                 let fetchMovies = try moc.executeFetchRequest(movieFetch) as! [ManagedMovie]
+<<<<<<< HEAD
                 print("fetchMovies: \(fetchMovies)\ncount: \(fetchMovies.count)")
+=======
+>>>>>>> bbefb5a8b1e9299355b5f104c3b456a72684b5c7
                 let movies = fetchMovies.map {(managedMovie: ManagedMovie) -> Movie in
                     var movie = Movie()
                     movie.title = managedMovie.title
