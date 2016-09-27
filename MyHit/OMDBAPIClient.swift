@@ -33,6 +33,7 @@ class OMDBAPIClient: NSObject {
                     movie.writer = managedMovie.writer
                     movie.genre = managedMovie.genre
                     movie.imdbID = managedMovie.imdbID
+                    
                     return movie
                 }
                 completion(movies)
@@ -79,8 +80,6 @@ class OMDBAPIClient: NSObject {
             managedMovie.genre = dictionary["Genre"] as? String
             managedMovie.imdbID = dictionary["imdbID"] as? String
         }
-//        let store = DataStore.sharedDataStore
-//        store.saveContext()
         do {
             try managedObjectContext.save()
         } catch {

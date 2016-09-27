@@ -6,6 +6,7 @@
         <attribute name="genre" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imdbID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imdbRating" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="metaScore" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="plot" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="poster" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,6 +15,6 @@
         <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ManagedMovie" positionX="-972" positionY="-936" width="191" height="210"/>
+        <element name="ManagedMovie" positionX="-972" positionY="-936" width="191" height="225"/>
     </elements>
 </model>

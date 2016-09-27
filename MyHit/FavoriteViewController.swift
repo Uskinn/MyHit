@@ -7,47 +7,59 @@
 //
 
 import UIKit
+import CoreData
 
-class FavoriteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FavoriteViewController: UITableViewController {
     @IBOutlet weak var myTableView: UITableView!
     
     let dataStore = DataStore.sharedDataStore
     
     let favoriteMovie = [Movie]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        OMDBAPIClient.getMovies { (movie) in print(movie) }
+        self.tableView.reloadData()
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.favoriteMovie.count
     }
-
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("favoriteCell", forIndexPath: indexPath) as! CustomCell
         
-        
+        NSOperationQueue.mainQueue().addOperationWithBlock { 
+            
+            OMDBAPIClient.getMovies({ (movie) in
+                
+                cell.year = movie.
+                
+            })
+            
+            
+        }
         
         
         return cell
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
