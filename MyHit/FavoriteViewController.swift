@@ -42,7 +42,7 @@ class FavoriteViewController: UITableViewController {
             
             OMDBAPIClient.getMovies({ (movie) in
                 
-                cell.year = movie.
+                //cell.year = movie.
                 
             })
             

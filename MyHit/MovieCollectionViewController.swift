@@ -23,7 +23,7 @@ class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, 
             //print(movies)
             self.moviesArray = movies
             
-            NSOperationQueue.mainQueue().addOperationWithBlock({ 
+            NSOperationQueue.mainQueue().addOperationWithBlock({
                 self.movieCollectionView.reloadData()
             })
             
@@ -42,12 +42,17 @@ class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, 
         let cell: CollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell
         
         let movie = moviesArray[indexPath.row]
-        if let poster = NSURL(string: movie.poster!) {
-            cell.movieCollectionImage.sd_setImageWithURL(poster)
+        
+        if let moviePoster = movie.poster {
+            if let poster = NSURL(string: moviePoster) {
+                cell.movieCollectionImage.sd_setImageWithURL(poster)
+            } else {
+                print("error occured")
+            }
         }
-        return cell
+            return cell
+        
     }
-    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         self.performSegueWithIdentifier("showMovie", sender: self)
@@ -58,7 +63,7 @@ class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, 
         if segue.identifier == "showMovie" {
             
             if let indexPaths = self.movieCollectionView?.indexPathsForSelectedItems() {
-               let indexPath = indexPaths[0] as NSIndexPath
+                let indexPath = indexPaths[0] as NSIndexPath
                 
                 let destinationVC = segue.destinationViewController as! MovieDetailViewController
                 
