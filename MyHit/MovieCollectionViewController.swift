@@ -8,16 +8,18 @@
 
 import UIKit
 
-class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var movieCollectionView: UICollectionView!
     
+    var movieSearchBar: UISearchBar!
     var moviesArray = [Movie]()
     var movieModalCollectionView: Movie?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addSearchBar()
         
         OMDBAPIClient.getMovies { (movies) in
             //print(movies)
@@ -73,6 +75,17 @@ class MovieCollectioViewController: UIViewController, UICollectionViewDelegate, 
                 print("error" )
             }
         }
+    }
+    
+    private func addSearchBar() {
+        
+        let screenWidth = UIScreen.mainScreen().bounds.size.width
+        
+        movieSearchBar = UISearchBar()
+        movieSearchBar.delegate = self
+        movieSearchBar.frame = CGRect(x: 20, y: 0, width: screenWidth * 0.9, height: 44)
+        
+        self.navigationController?.navigationBar.addSubview(movieSearchBar)
     }
 }
 
