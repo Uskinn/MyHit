@@ -66,7 +66,13 @@
                             <constraint firstItem="FxE-Hj-0ah" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="J1H-Ye-id0"/>
                             <constraint firstItem="FxE-Hj-0ah" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="VBi-hN-BXz"/>
                             <constraint firstItem="FxE-Hj-0ah" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="cmH-sH-N1b"/>
+                            <constraint firstItem="FxE-Hj-0ah" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="-64" id="fRf-bI-FkW"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="cmH-sH-N1b"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Bun-k9-Mva"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
